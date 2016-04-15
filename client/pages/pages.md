@@ -1,1 +1,0 @@
-Pages is where content that belongs in specific layouts goes
