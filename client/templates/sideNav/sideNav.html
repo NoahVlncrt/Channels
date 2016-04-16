@@ -1,7 +1,6 @@
 <template name="sideNav">
   <nav>
     <ul id="slide-out" class="side-nav">
-      <li><a href="#"></a></li>
       <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
           <li>
@@ -9,7 +8,7 @@
             <div class="collapsible-body">
               <ul>
                 {{#each channels}}
-                  {{>test}}
+                  <li><a href="{{pathFor '/channel/:id' id=this._id}}">{{title}}</a></li>
                 {{/each}}
               </ul>
             </div>

@@ -1,0 +1,12 @@
+@import "{poetic:materialize-scss}/sass/components/_variables.scss";
+
+ .channelBanner {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  padding-top: -50px;
+  background-color: $secondary-color;
+}
+.title {
+  margin-top: 0px;
+}

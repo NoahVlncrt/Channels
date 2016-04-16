@@ -5,6 +5,8 @@
     "start": "meteor run"
   },
   "dependencies": {
+    "materialize": "^1.0.0",
+    "materialize-css": "^0.97.6",
     "meteor-node-stubs": "~0.2.0"
   }
 }
