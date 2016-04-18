@@ -15,7 +15,12 @@ Template.channelPage.helpers({
 Template.channelPage.events({
   'click .follow': function() {
     currentId = FlowRouter.getParam("id");
-    followers = Channels.findOne({_id: currentId}).followers;
-
+    Data = Channels.findOne({_id: currentId});
+    if(Data.followers.includes(Meteor.userId()) === true) {
+      console.log("seems as if you are already following this channel. . .")
+    } else {
+      Channels.update({_id: currentId}, {$push: {"followers": Meteor.userId()}});
+      console.log("thank you for following!")
+    }
   }
 })

@@ -1,6 +1,9 @@
 <template name="sideNav">
   <nav>
     <ul id="slide-out" class="side-nav">
+      {{#if currentUser}}
+        <li><a href="#" class="logout">Logout</a></li>
+      {{/if}}
       <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
           <li>

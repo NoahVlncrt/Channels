@@ -8,3 +8,8 @@ Template.sideNav.helpers({
     return Channels.find({createdBy: currentUser}, {sort:{createdAt: -1}});
   }
 })
+Template.sideNav.events({
+  'click .logout': function(){
+    AccountsTemplates.logout();
+  }
+})

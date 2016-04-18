@@ -10,8 +10,5 @@ Meteor.methods({
       followers: [],
       owners: []
     });
-    Channels.after.insert(function (userId, doc) {
-      Channels.update({_id: this._id}, {$push:{"followers": Meteor.userId()}});
-    });
   }
 })
