@@ -10,9 +10,21 @@
             <a class="collapsible-header">Your Channels</a>
             <div class="collapsible-body">
               <ul>
-                {{#each channels}}
+                {{#each channelsOwned}}
                   <li><a href="{{pathFor '/channel/:id' id=this._id}}">{{title}}</a></li>
                 {{/each}}
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="no-padding">
+        <ul class="collapsible collapsible-accordion">
+          <li>
+            <a class="collapsible-header">Following Channels</a>
+            <div class="collapsible-body">
+              <ul>
+                <li><a href="#">test</a></li>
               </ul>
             </div>
           </li>

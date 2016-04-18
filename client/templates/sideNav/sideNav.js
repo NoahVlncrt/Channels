@@ -3,9 +3,12 @@ Template.sideNav.onRendered(function(){
   $(".collapsible").collapsible();
 });
 Template.sideNav.helpers({
-  channels: function() {
+  channelsOwned: function() {
     currentUser = Meteor.userId();
     return Channels.find({createdBy: currentUser}, {sort:{createdAt: -1}});
+  },
+  channelsFollowing: function() {
+    return Channels.find({followers: {$in: [Meteor.userId()]}})
   }
 })
 Template.sideNav.events({
