@@ -3,6 +3,8 @@
     <ul id="slide-out" class="side-nav">
       {{#if currentUser}}
         <li><a href="#" class="logout">Logout</a></li>
+      {{else}}
+        <li><a href="/login" class="login">Login/Signup</a></li>
       {{/if}}
       <li class="no-padding">
         <ul class="collapsible collapsible-accordion">
@@ -11,7 +13,7 @@
             <div class="collapsible-body">
               <ul>
                 {{#each channelsOwned}}
-                  <li><a href="{{pathFor '/channel/:id' id=this._id}}">{{title}}</a></li>
+                  <li><a href="{{pathFor '/channel/:shortname' shortname=this.shortName}}">{{shortName}}</a></li>
                 {{/each}}
               </ul>
             </div>

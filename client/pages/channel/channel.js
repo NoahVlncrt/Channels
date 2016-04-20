@@ -3,12 +3,12 @@ Template.channelPage.onRendered(function(){
 });
 Template.channelPage.helpers({
   channelInfo: function() {
-    currentId = FlowRouter.getParam("id");
-    return Channels.findOne({_id: currentId});
+    currentShortName = FlowRouter.getParam("shortName");
+    return Channels.findOne({shortName: currentShortName});
   },
   followingCheck: function() {
-    currentId = FlowRouter.getParam("id");
-    Data = Channels.findOne({_id: currentId});
+    currentShortName = FlowRouter.getParam("shortName");
+    Data = Channels.findOne({shortName: currentShortName});
     return Data.followers.includes(Meteor.userId()) || Data.createdBy === Meteor.userId();
   }
 });
