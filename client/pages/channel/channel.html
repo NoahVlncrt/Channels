@@ -1,6 +1,7 @@
 <template name="channelPage">
   <div class="channelBanner">
     <h1 class="title">{{channelInfo.title}}</h1>
+    <p><i>@{{channelInfo.shortName}}</i></p>
     <p>{{channelInfo.description}}</p>
     {{#if currentUser}}
       {{#if followingCheck}}
@@ -9,6 +10,7 @@
         <a class="waves-effect waves-light btn follow"><i class="material-icons right">add</i>Follow</a>
       {{/if}}
     {{/if}}
+    <button class="btn modal-trigger" data-target="settingsModal"><i class="material-icons">settings</i></button>
   </div>
   <div class="row">
     <div class="col s12">
@@ -18,5 +20,6 @@
       </ul>
     </div>
   </div>
+  {{>settingsPanel}}
   {{>floatingFab}}
 </template>

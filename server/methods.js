@@ -10,7 +10,10 @@ Meteor.methods({
       channelType: "public",
       followerCount: 0,
       followers: [],
-      owners: []
+      owners: [],
+      sections: ["Official", "Community"],
+      badges: ["alpha"],
+      visibility: "public",
     });
   }
 })

@@ -1,5 +1,6 @@
 Template.channelPage.onRendered(function(){
   $('ul.tabs').tabs()
+  $('.modal-trigger').leanModal()
 });
 Template.channelPage.helpers({
   channelInfo: function() {
@@ -22,5 +23,5 @@ Template.channelPage.events({
       Channels.update({_id: currentId}, {$push: {"followers": Meteor.userId()}});
       console.log("thank you for following!")
     }
-  }
+  },
 })

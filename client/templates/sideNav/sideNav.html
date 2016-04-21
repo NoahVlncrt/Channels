@@ -13,7 +13,7 @@
             <div class="collapsible-body">
               <ul>
                 {{#each channelsOwned}}
-                  <li><a href="{{pathFor '/channel/:shortname' shortname=this.shortName}}">{{shortName}}</a></li>
+                  <li><a href="{{pathFor '/channel/:shortname' shortname=this.shortName}}">@{{shortName}}</a></li>
                 {{/each}}
               </ul>
             </div>
