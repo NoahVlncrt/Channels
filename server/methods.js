@@ -12,8 +12,10 @@ Meteor.methods({
       followers: [],
       owners: [],
       sections: ["Official", "Community"],
-      badges: ["alpha"],
+      badges: [
+        {name: "alpha", description: "Here from the beginning (that's right i'm a hipster!)"}
+      ],
       visibility: "public",
-    });
-  }
+     });
+   }
 })
