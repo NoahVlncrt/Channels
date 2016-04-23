@@ -4,8 +4,13 @@ Template.createChannelPage.events({
     title = $("#channelTitle").val()
     description = $("#channelDescription").val()
     shortName = $("#channelShortName").val()
-    createdBy = Meteor.userId()
-    createdAt = new Date()
-    Meteor.call("insertNewChannel", title, description, shortName, createdBy, createdAt);
+    
+    Data = {
+      "title": title,
+      "description": description,
+      "shortName": shortName
+    }
+    
+    Channels.insert(Data, {validate:true})
   }
 })
