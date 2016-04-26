@@ -24,5 +24,6 @@ Template.createChannelPage.events({
     } else {
       console.log("This name is already in use")
     }
+    FlowRouter.go('/channel/'+shortName);
   }
 })
