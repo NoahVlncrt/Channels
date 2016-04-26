@@ -17,14 +17,16 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <select multiple class="select">
+              <select id="channel">
                 <optgroup label="Your Channels">
-                  {{#each channels}}
-                    <option value="cat">{{title}}</option>
+                  {{#each createdChannels}}
+                    <option value="{{shortName}}">{{title}}</option>
                   {{/each}}
                 </optgroup>
                 <optgroup label="Following">
-                  <option value="2">test</option>
+                  {{#each followingChannels}}
+                    <option value="2">test</option>
+                  {{/each}}
                 </optgroup>
               </select>
               <label>Channel</label>
