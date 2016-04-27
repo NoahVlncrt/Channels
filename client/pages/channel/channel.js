@@ -3,6 +3,10 @@ Template.channelPage.onRendered(function(){
   $('.modal-trigger').leanModal()
 });
 Template.channelPage.helpers({
+  posts: function() {
+    currentShortName = FlowRouter.getParam("shortName");
+    return Posts.find({parentChannel: currentShortName})
+  },
   channelInfo: function() {
     currentShortName = FlowRouter.getParam("shortName");
     return Channels.findOne({shortName: currentShortName});

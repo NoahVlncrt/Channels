@@ -20,6 +20,13 @@
       </ul>
     </div>
   </div>
+  <div class="row">
+    <div class="col s12">
+      {{#each posts}}
+        {{>postCard}}
+      {{/each}}
+    </div>
+  </div>
   {{>settingsPanel}}
   {{>floatingFab}}
 </template>
