@@ -1,11 +1,14 @@
 Template.channelPage.onRendered(function(){
   $('ul.tabs').tabs()
   $('.modal-trigger').leanModal()
+  currentTab = "Official";
+  Session.set("currentPostView", currentTab);
 });
 Template.channelPage.helpers({
   posts: function() {
     currentShortName = FlowRouter.getParam("shortName");
-    return Posts.find({parentChannel: currentShortName})
+    postView  = Session.get("currentPostView")
+    return Posts.find({$and: [{parentChannel: currentShortName},{parentSection: postView}]})
   },
   channelInfo: function() {
     currentShortName = FlowRouter.getParam("shortName");
@@ -28,4 +31,10 @@ Template.channelPage.events({
       console.log("thank you for following!")
     }
   },
+  'click .communityTrigger': function(){
+    Session.set("currentPostView", "Community")
+  },
+  'click .officialTrigger': function(){
+    Session.set("currentPostView", "Official")
+  }
 })
