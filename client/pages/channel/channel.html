@@ -4,13 +4,19 @@
     <p><i>@{{channelInfo.shortName}}</i></p>
     <p>{{channelInfo.description}}</p>
     {{#if currentUser}}
-      {{#if followingCheck}}
+      {{#if isFollowing}}
         <a class="waves-effect waves-light btn follow disabled"><i class="material-icons right">add</i>Follow</a>
       {{else}}
-        <a class="waves-effect waves-light btn follow"><i class="material-icons right">add</i>Follow</a>
+        {{#if isOwner}}
+          <a class="waves-effect waves-light btn follow disabled"><i class="material-icons right">add</i>Follow</a>
+        {{else}}
+          <a class="waves-effect waves-light btn follow"><i class="material-icons right">add</i>Follow</a>
+        {{/if}}
       {{/if}}
     {{/if}}
-    <button class="btn modal-trigger" data-target="settingsModal"><i class="material-icons">settings</i></button>
+    {{#if isOwner}}
+      <button class="btn modal-trigger" data-target="settingsModal"><i class="material-icons">settings</i></button>
+    {{/if}}
   </div>
   <div class="row">
     <div class="col s12">
