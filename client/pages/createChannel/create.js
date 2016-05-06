@@ -15,7 +15,7 @@ Template.createChannelPage.events({
       if(Meteor.settings.public.restrictedShortNames.indexOf(shortName) === -1){
         Channels.insert(Data, {validate:true})
       } else {
-        if(Roles.userIsInRole( Meteor.userId(), 'admin' ) === true){
+        if(Roles.userIsInRole( this.userId, 'admin' ) === true){
           Channels.insert(Data, {validate:true})
         } else {
           console.log("You are not permitted to use this name!")
