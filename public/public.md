@@ -1,1 +1,0 @@
-Images and such belong here
