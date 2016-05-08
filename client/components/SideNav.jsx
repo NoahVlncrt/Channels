@@ -2,7 +2,14 @@ import React from 'react';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
 
-export default class SideNav extends React.Component {
+SideNav = React.createClass({
+  componentDidMount: function() {
+    $(".button-collapse").sideNav({
+      closeOnClick: true,
+      menuWidth: 325
+    });
+    $(".collapsible").collapsible();
+  },
   render(){
    return(
      <nav>
@@ -27,7 +34,7 @@ export default class SideNav extends React.Component {
               <a className="collapsible-header">Following Channels</a>
               <div className="collapsible-body">
                 <ul>
-                  <li><a href="">test</a></li>
+                  <li><a href="/">test</a></li>
                 </ul>
               </div>
             </li>
@@ -38,4 +45,6 @@ export default class SideNav extends React.Component {
     </nav>
   )
  }
-}
+});
+
+export default SideNav;

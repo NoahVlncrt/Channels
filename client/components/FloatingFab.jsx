@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default class FloatingFab extends React.Component{
+FloatingFab = React.createClass({
   render(){
     return(
       <div className="fixed-action-btn" style={{bottom: '45px', right: '24px',}}>
@@ -14,6 +14,8 @@ export default class FloatingFab extends React.Component{
           <li><a href="/create/announcement" className="btn-floating green"><i className="material-icons">announcement</i></a></li>
         </ul>
       </div>
-    )
+    );
   }
-}
+});
+
+export default FloatingFab;
