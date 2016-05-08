@@ -1,0 +1,12 @@
+{
+  "name": "Channels",
+  "private": true,
+  "scripts": {
+    "start": "meteor --settings settings.json"
+  },
+  "dependencies": {
+    "react": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "react-mounter": "^1.2.0"
+  }
+}
