@@ -2,11 +2,8 @@ import React from 'react';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
 
-export default class SideNav extends TrackerReact(React.Component) {
-  UserInfo(){
-    return
-  }
- render(){
+export default class SideNav extends React.Component {
+  render(){
    return(
      <nav>
       <ul id="slide-out" className="side-nav">

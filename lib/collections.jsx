@@ -1,3 +1,2 @@
-const Channels = new Mongo.Collection("channels");
+Channels = new Mongo.Collection("channels");
 
-export default Channels
