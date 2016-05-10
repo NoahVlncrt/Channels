@@ -1,11 +1,12 @@
 import React from 'react';
 
-import SideNav from './components/SideNav.jsx';
+import SideNav from './SideNav/SideNav.jsx';
 import FloatingFab from './components/FloatingFab.jsx';
 
 export const MainLayout = ({content}) => (
-  <div className="test">
+  <div>
     <SideNav />
     <FloatingFab />
+    {content}
   </div>
 )

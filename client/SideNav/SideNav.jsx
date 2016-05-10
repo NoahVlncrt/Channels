@@ -1,6 +1,8 @@
 import React from 'react';
 import TrackerReact from 'meteor/ultimatejs:tracker-react';
 
+import LoginButton from './LoginButton.jsx';
+import LogoutButton from './LogoutButton.jsx'
 
 SideNav = React.createClass({
   componentDidMount: function() {
@@ -10,12 +12,24 @@ SideNav = React.createClass({
     });
     $(".collapsible").collapsible();
   },
+  
+  _logout: function(){
+    AccountsTemplates.logout();
+  },
+  
+  userStatus: function() {
+    if(!Meteor.loggingIn() && Meteor.user()) {
+      return <LogoutButton />
+    } else {
+      return <LoginButton />
+    }
+  },
+  
   render(){
-   return(
+    return(
      <nav>
       <ul id="slide-out" className="side-nav">
-          <li><a href="#" className="logout">Logout</a></li>
-          <li><a href="/login" className="login">Login/Signup</a></li>
+          {this.userStatus()}
         <li className="no-padding">
           <ul className="collapsible collapsible-accordion">
             <li>
@@ -46,5 +60,6 @@ SideNav = React.createClass({
   )
  }
 });
+
 
 export default SideNav;

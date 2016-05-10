@@ -1,27 +1,19 @@
 import React from 'react';
 import {mount} from 'react-mounter';
+import Blaze from 'meteor/gadicc:blaze-react-component';
 
-import {MainLayout} from './MainLayout.jsx'
-import App from '../App.jsx'
+import {MainLayout} from './MainLayout.jsx';
+import {BlankLayout} from './BlankLayout.jsx';
 
 FlowRouter.route('/',{
   action(){
-    mount(MainLayout, {
-      content: (<App />)
-    })
+    mount(MainLayout)
   }
 });
-AccountsTemplates.configureRoute('signIn', {
-  layoutType: 'blaze',
-  name: 'signin',
-  path: '/login',
-  layoutTemplate: 'blank',
-  contentRegion: 'content'
-});
-AccountsTemplates.configureRoute('signUp', {
-  layoutType: 'blaze',
-  name: 'signup',
-  path: '/signup',
-  layoutTemplate: 'blank',
-  contentRegion: 'content'
-});
+FlowRouter.route('/login',{
+  action(){
+    mount(BlankLayout, {
+      content: (<Blaze template="atForm"/>)
+    })
+  }
+})
