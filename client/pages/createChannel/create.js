@@ -12,15 +12,7 @@ Template.createChannelPage.events({
     }
     
     if(Channels.findOne({shortName: shortName}) === undefined){
-      if(Meteor.settings.public.restrictedShortNames.indexOf(shortName) === -1){
-        Channels.insert(Data, {validate:true})
-      } else {
-        if(Roles.userIsInRole( this.userId, 'admin' ) === true){
-          Channels.insert(Data, {validate:true})
-        } else {
-          console.log("You are not permitted to use this name!")
-        }
-      }
+      Channels.insert(Data, {validate:true})
     } else {
       console.log("This name is already in use")
     }

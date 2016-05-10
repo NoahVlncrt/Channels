@@ -9,7 +9,7 @@ Template.createPostPage.helpers({
   },
   followingChannels: function(){
     currentUser = Meteor.userId()
-    return Channels.find({followers: {$in: currentUser}})
+    return Channels.find({currentUser: {$in: followers}})
   }
 })
 
@@ -27,7 +27,8 @@ Template.createPostPage.events({
       parentSection: "Community",
       postType: "Community"
     }
-    
     Posts.insert(Data, {validate:true})
+    
+    FlowRouter.go('/channel/'+parentChannel)
   }
 })
