@@ -18,6 +18,11 @@ Template.channelPage.helpers({
     currentShortName = FlowRouter.getParam("shortName");
     Data = Channels.findOne({shortName: currentShortName});
     return Data.followers.includes(Meteor.userId()) || Data.createdBy === Meteor.userId();
+  },
+  currentChannelOwner: function(){
+    currentShortName = FlowRouter.getParam("shortName");
+    Data = Channels.findOne({shortName: currentShortName})
+    
   }
 });
 Template.channelPage.events({

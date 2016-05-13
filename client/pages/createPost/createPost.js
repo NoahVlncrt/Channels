@@ -28,7 +28,5 @@ Template.createPostPage.events({
       postType: "Community"
     }
     Posts.insert(Data, {validate:true})
-    
-    FlowRouter.go('/channel/'+parentChannel)
   }
 })
