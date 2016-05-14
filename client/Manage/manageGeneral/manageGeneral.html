@@ -1,0 +1,23 @@
+<template name="manageGeneral">
+  <h1>General</h1>
+  <div class="row">
+    <form class="col s12 editSettingsGeneral">
+      <div class="row">
+        <div class="input-field col s12">
+          <input type="text" value="{{channelData.title}}" id="editSettingsTitle">
+          <label class="active" for="editSettingsTitle">Title</label>
+        </div>
+        <div class="input-field col s12">
+          <textarea id="editSettingsDescription" value="{{channelData.description}}" class="materialize-textarea"></textarea>
+          <label for="editSettingsDescription" class="active">Description</label>
+        </div>
+        <div class="input-field col s12">
+          <button class="btn waves-effect waves-light" type="submit" id="editSettingsSubmit">Submit
+            <i class="material-icons right">send</i>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="divider"></div>
+</template>
