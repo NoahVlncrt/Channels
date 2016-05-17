@@ -17,5 +17,6 @@ Template.settingsPanel.events({
       title: newTitle,
       description: newDescription,
     }})
+    
   }
 });

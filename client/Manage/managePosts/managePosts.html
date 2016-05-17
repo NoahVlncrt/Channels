@@ -7,6 +7,7 @@
       </ul>
     </div>
   </div>
+  {{>managePostsEdit}}
   <div class="posts">
     {{#each posts}}
       <div class="card">
@@ -15,8 +16,8 @@
           <p>{{content}}</p>  
         </div>
         <div class="card-action">
-          <a href="#">delete</a>
-          <a href="#">edit</a>
+          <a href="#" class="deleteButton">delete</a>
+          <a href="#" class="editButton">edit</a>
         </div>
       </div>
     {{/each}}
